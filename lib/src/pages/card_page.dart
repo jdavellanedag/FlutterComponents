@@ -11,6 +11,37 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
         ],
       ),
     );
@@ -18,6 +49,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardType1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: [
           ListTile(
@@ -37,6 +70,47 @@ class CardPage extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+
+  Widget _cardType2() {
+    final card = Container(
+      //clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          FadeInImage(
+            image: NetworkImage(
+                'https://photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          /* Image(
+            image: NetworkImage(
+                'https://photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg'),
+          ), */
+          Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text('Duis commodo amet proident aliqua cupidatat.'))
+        ],
+      ),
+    );
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
